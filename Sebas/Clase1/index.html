@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        background-color: black;
+        color: white;
+        padding: 20xp;
+    }
+
+    button:hover{
+        background-color: blue;
+    }
+</style>
+<body>
+    <h1>Ingresa tu nombre</h1>
+    <input type="text" id="nombre">
+    <button onclick="bichota()">Saludar</button>
+    <p id="salidaNombre">Nose tu nombre</p>
+    <script>
+        function bichota(){
+            let nombrePersona = document.getElementById("nombre")
+            let salida = document.getElementById("salidaNombre")
+            
+            let mensaje = "Tu te llamas " + nombrePersona.value
+
+            salida.textContent = mensaje
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Temporizador</title>
+</head>
+<body onload="comenzarReloj()">
+    <h1>Temporizador</h1>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Empezar</button>
+    <p id="cambioEstado">00:00:00</p>
+    <audio id="sonidoAlarma">
+        <source src="/assets/viralaudio-descent-whoosh-long-cinematic-sound-effect-405921.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        let tiempoActual = document.getElementById("tiempoElegido")
+        let estado = document.getElementById("cambioEstado")
+        let sonido = document.getElementById("sonidoAlarma")
+
+        function tiempoFinalizado(){
+            estado.style.color = "green"
+            sonido.play()
+        }
+
+        function comenzarTiempo(){
+            setTimeout(tiempoFinalizado,1000 * tiempoActual.value)
+        }
+
+        function ticTac(){
+            let tiempoActual = new Date()
+            let hora = timpoActual.getHours()
+            let minutos = tiempoActual.getMinutes()
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,"0")
+
+            let horaTexto = hora + ":"+ minutos +":"+ segundos
+            estado.textContent = horaTexto
+        }
+
+        function comenzarReloj(){
+            setInterval(ticTac, 1000)
+        }
+    </script>
+</body>
+</html>
